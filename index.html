@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F1EADA">
+  <title>Daybook | Today</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="hero">
+      <div class="hero-top">
+        <div>
+          <p class="eyebrow hero-eyebrow">DAYBOOK / A LITTLE EVERY DAY</p>
+          <h1 id="greeting">Morning, Zainab.</h1>
+          <p id="today-date" class="hero-date"></p>
+        </div>
+        <img class="header-cat" src="assets/cat/cat-sitting.png" alt="A sitting cat">
+      </div>
+      <div class="monthly-heading">
+        <span>Attendance this month</span>
+        <strong id="monthly-summary">0% · 0 / 0</strong>
+      </div>
+      <div class="progress-track" role="img" aria-label="Monthly attendance breakdown">
+        <span class="progress-present" id="progress-present"></span>
+        <span class="progress-club" id="progress-club"></span>
+        <span class="progress-absent" id="progress-absent"></span>
+      </div>
+
+    </header>
+
+    <main class="main-content">
+      <div class="picture-strip" role="img" aria-label="White flowers in a garden"></div>
+      <section class="today-section" aria-labelledby="today-title">
+        <p class="eyebrow section-eyebrow" id="day-label"></p>
+        <div class="section-heading">
+          <h2 id="today-title">Today</h2>
+          <span id="lecture-count"></span>
+        </div>
+        <div id="today-reminders" class="today-reminders" aria-live="polite" hidden></div>
+        <button id="catchup-note" class="catchup-note" type="button" hidden>
+          <span class="catchup-icon" aria-hidden="true">↶</span>
+          <span><strong id="catchup-message"></strong><span class="catchup-link">Review recent days →</span></span>
+        </button>
+        <div id="catchup-days" class="catchup-days" hidden></div>
+        <div id="past-day-tools" hidden><button id="back-today" class="back-today" type="button">← Back to today</button></div>
+        <div id="lecture-list" class="lecture-list"></div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Main navigation">
+      <a class="nav-item selected" href="index.html" aria-current="page"><img src="assets/icons/icon-today.png" alt=""><span>Today</span></a>
+      <a class="nav-item" href="month.html"><img src="assets/icons/icon-month-off.png" alt=""><span>Month</span></a>
+      <a class="nav-item" href="calendar.html"><img src="assets/icons/icon-calendar-off.png" alt=""><span>Calendar</span></a>
+      <a class="nav-item" href="notes.html"><img src="assets/icons/icon-notes-off.png" alt=""><span>Notes</span></a>
+    </nav>
+  </div>
+  <script src="shared.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

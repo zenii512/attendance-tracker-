@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F1EADA">
+  <title>Daybook | Month</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="hero">
+      <div class="hero-top">
+        <div>
+          <p class="eyebrow hero-eyebrow">DAYBOOK / A LITTLE EVERY DAY</p>
+          <h1>Morning, Zainab.</h1>
+          <p id="today-date" class="hero-date"></p>
+        </div>
+        <img class="header-cat" src="assets/cat/cat-sitting.png" alt="A sitting cat">
+      </div>
+      <div class="monthly-heading">
+        <span>Attendance this month</span>
+        <strong id="monthly-summary">0% · 0 / 0</strong>
+      </div>
+      <div class="progress-track" role="img" aria-label="Monthly attendance breakdown">
+        <span class="progress-present" id="progress-present"></span>
+        <span class="progress-club" id="progress-club"></span>
+        <span class="progress-absent" id="progress-absent"></span>
+      </div>
+    </header>
+
+    <main class="main-content month-content">
+      <div class="picture-strip month-picture" role="img" aria-label="A garden of flowers"></div>
+      <section class="month-section" aria-labelledby="month-title">
+        <p class="eyebrow section-eyebrow">THE BIGGER PICTURE</p>
+        <div class="month-heading">
+          <h2 id="month-title"></h2>
+          <div class="month-arrows">
+            <button id="previous-month" type="button" aria-label="Previous month">‹</button>
+            <button id="next-month" type="button" aria-label="Next month">›</button>
+          </div>
+        </div>
+
+        <div id="empty-month" class="empty-state month-empty" hidden>
+          <img src="assets/cat/cat-sitting.png" alt="">
+          <p>Nothing logged this month yet. Your attendance will gather here.</p>
+        </div>
+
+        <div id="month-data">
+          <section class="month-stats" aria-label="Monthly attendance summary">
+            <p class="month-stats-label">You made it to</p>
+            <div class="month-stats-main">
+              <strong id="present-percent" class="present-percent">0%</strong>
+              <p><span id="logged-count">0 of 0</span><br>logged lectures</p>
+            </div>
+            <div class="club-included">
+              <strong id="including-club-percent">0%</strong>
+              <span>if club work counts as present (<span id="club-included-count">0 / 0</span>)</span>
+            </div>
+          </section>
+
+          <section class="subject-section" aria-labelledby="subject-title">
+            <h3 id="subject-title">A subject at a time</h3>
+            <div class="status-legend" aria-label="Attendance key">
+              <span><i class="legend-present"></i>Present</span>
+              <span><i class="legend-club"></i>Club</span>
+              <span><i class="legend-absent"></i>Absent</span>
+            </div>
+            <div class="subject-table-wrap">
+              <table class="subject-table">
+                <thead><tr><th scope="col">Subject</th><th scope="col">P</th><th scope="col">C</th><th scope="col">A</th></tr></thead>
+                <tbody id="subject-rows"></tbody>
+                <tfoot id="subject-total"></tfoot>
+              </table>
+            </div>
+            <p id="unlogged-note" class="month-note"></p>
+          </section>
+
+          <section class="club-missed-section" aria-labelledby="club-missed-title">
+            <h3 id="club-missed-title">Lectures I missed for clubs</h3>
+            <ul id="club-missed-list" class="club-missed-list"></ul>
+          </section>
+
+          <button id="copy-summary" class="copy-summary" type="button">Copy summary</button>
+        </div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Main navigation">
+      <a class="nav-item" href="index.html"><img src="assets/icons/icon-today-off.png" alt=""><span>Today</span></a>
+      <a class="nav-item selected" href="month.html" aria-current="page"><img src="assets/icons/icon-month.png" alt=""><span>Month</span></a>
+      <a class="nav-item" href="calendar.html"><img src="assets/icons/icon-calendar-off.png" alt=""><span>Calendar</span></a>
+      <a class="nav-item" href="notes.html"><img src="assets/icons/icon-notes-off.png" alt=""><span>Notes</span></a>
+    </nav>
+  </div>
+  <script src="shared.js"></script>
+  <script src="month.js"></script>
+</body>
+</html>

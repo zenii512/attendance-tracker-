@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F1EADA">
+  <title>Daybook | Calendar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="hero">
+      <div class="hero-top">
+        <div>
+          <p class="eyebrow hero-eyebrow">DAYBOOK / A LITTLE EVERY DAY</p>
+          <h1>Morning, Zainab.</h1>
+          <p id="today-date" class="hero-date"></p>
+        </div>
+        <img class="header-cat" src="assets/cat/cat-sitting.png" alt="A sitting cat">
+      </div>
+      <div class="monthly-heading">
+        <span>Attendance this month</span>
+        <strong id="monthly-summary">0% · 0 / 0</strong>
+      </div>
+      <div class="progress-track" role="img" aria-label="Monthly attendance breakdown">
+        <span class="progress-present" id="progress-present"></span>
+        <span class="progress-club" id="progress-club"></span>
+        <span class="progress-absent" id="progress-absent"></span>
+      </div>
+    </header>
+
+    <main class="main-content calendar-content">
+      <div class="picture-strip calendar-picture" role="img" aria-label="A cat resting in a garden"></div>
+      <section class="calendar-section" aria-labelledby="calendar-page-title">
+        <p class="eyebrow section-eyebrow">MAKE ROOM FOR GOOD THINGS</p>
+        <h2 id="calendar-page-title" class="calendar-page-title">Calendar</h2>
+
+        <section class="calendar-month-card" aria-label="Choose a calendar date">
+          <div class="calendar-month-heading">
+            <h3 id="calendar-month-title"></h3>
+            <div class="calendar-month-arrows">
+              <button id="calendar-previous" type="button" aria-label="Previous month">‹</button>
+              <button id="calendar-next" type="button" aria-label="Next month">›</button>
+            </div>
+          </div>
+          <div class="calendar-weekdays" aria-hidden="true">
+            <span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span>
+          </div>
+          <div id="calendar-grid" class="calendar-grid"></div>
+          <div class="calendar-legend"><span><i></i>Event day</span><span id="today-legend"></span></div>
+        </section>
+
+        <form id="event-form" class="event-form">
+          <div class="event-form-heading">
+            <div>
+              <p class="eyebrow">ADD AN EVENT</p>
+              <h3 id="event-form-date"></h3>
+            </div>
+            <button id="clear-event-form" class="clear-event-form" type="button" aria-label="Clear event form">×</button>
+          </div>
+
+          <label class="event-field">Event title
+            <input id="event-title" type="text" maxlength="100" required placeholder="Give it a name">
+          </label>
+          <label class="event-field">Paste a message or a link
+            <textarea id="event-body" rows="5" placeholder="Paste a message or a link"></textarea>
+          </label>
+          <div class="event-date-fields">
+            <label class="event-field">Date<input id="event-date" type="date" required></label>
+            <label class="event-field">Time<input id="event-time" type="time" required></label>
+          </div>
+          <div class="event-field">
+            <span>Club <span class="optional-label">(optional)</span></span>
+            <div id="event-club-tags" class="event-club-tags"></div>
+            <label id="custom-club-field" class="event-field custom-club-field" hidden>Type the club name
+              <input id="custom-club-name" type="text" maxlength="60" placeholder="Type the club name">
+            </label>
+          </div>
+          <button id="save-event" class="save-event" type="submit">Add event</button>
+        </form>
+
+        <section class="coming-up-section" aria-labelledby="coming-up-title">
+          <h3 id="coming-up-title">Coming up</h3>
+          <div id="upcoming-events" class="upcoming-events"></div>
+          <div id="empty-events" class="empty-state events-empty" hidden>
+            <img src="assets/cat/cat-sitting.png" alt="">
+            <p>No upcoming events yet. Add one to start your list.</p>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Main navigation">
+      <a class="nav-item" href="index.html"><img src="assets/icons/icon-today-off.png" alt=""><span>Today</span></a>
+      <a class="nav-item" href="month.html"><img src="assets/icons/icon-month-off.png" alt=""><span>Month</span></a>
+      <a class="nav-item selected" href="calendar.html" aria-current="page"><img src="assets/icons/icon-calendar.png" alt=""><span>Calendar</span></a>
+      <a class="nav-item" href="notes.html"><img src="assets/icons/icon-notes-off.png" alt=""><span>Notes</span></a>
+    </nav>
+  </div>
+  <script src="shared.js"></script>
+  <script src="calendar.js"></script>
+</body>
+</html>

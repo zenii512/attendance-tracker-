@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F1EADA">
+  <title>Daybook | Notes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="hero">
+      <div class="hero-top">
+        <div>
+          <p class="eyebrow hero-eyebrow">DAYBOOK / A LITTLE EVERY DAY</p>
+          <h1>Morning, Zainab.</h1>
+          <p id="today-date" class="hero-date"></p>
+        </div>
+        <img class="header-cat" src="assets/cat/cat-sitting.png" alt="A sitting cat">
+      </div>
+      <div class="monthly-heading">
+        <span>Attendance this month</span>
+        <strong id="monthly-summary">0% · 0 / 0</strong>
+      </div>
+      <div class="progress-track" role="img" aria-label="Monthly attendance breakdown">
+        <span class="progress-present" id="progress-present"></span>
+        <span class="progress-club" id="progress-club"></span>
+        <span class="progress-absent" id="progress-absent"></span>
+      </div>
+    </header>
+
+    <main class="main-content notes-content">
+      <div class="picture-strip notes-picture" role="img" aria-label="A lit window at dusk"></div>
+      <section class="notes-section" aria-labelledby="notes-title">
+        <p class="eyebrow section-eyebrow">THOUGHTS TO KEEP CLOSE</p>
+        <div class="notes-heading">
+          <h2 id="notes-title">Notes</h2>
+          <span id="reminder-count">0 little reminders</span>
+        </div>
+        <p class="notes-intro">A place for the things margins can't hold.</p>
+
+        <div class="note-filters" role="group" aria-label="Filter notes">
+          <button class="note-filter active" type="button" data-filter="all" aria-pressed="true">All notes</button>
+          <button class="note-filter" type="button" data-filter="reminders" aria-pressed="false">With reminders</button>
+        </div>
+
+        <div id="empty-notes" class="empty-state notes-empty" hidden>
+          <img src="assets/cat/cat-sitting.png" alt="">
+          <p>Nothing else to remember.</p>
+        </div>
+        <div id="notes-board" class="notes-board"></div>
+        <p id="notes-filter-empty" class="notes-filter-empty" hidden>No notes have reminders yet.</p>
+
+        <button id="add-note" class="add-note" type="button">＋ Add a note</button>
+        <form id="note-form" class="note-form" hidden>
+          <div class="note-form-heading">
+            <h3 id="note-form-title">Add a note</h3>
+            <button id="close-note-form" type="button" aria-label="Close note form">&times;</button>
+          </div>
+          <label class="note-field">Title<input id="note-title" type="text" maxlength="120" required placeholder="Give this note a title"></label>
+          <label class="note-field">Note text<textarea id="note-body" rows="5" required placeholder="Write a thought to keep close"></textarea></label>
+          <label class="note-field">Subject
+            <select id="note-subject"></select>
+          </label>
+          <fieldset class="note-reminder-fields">
+            <legend>Reminder <span>(optional)</span></legend>
+            <label class="note-field">Date<input id="note-reminder-date" type="date"></label>
+            <label class="note-field">Time<input id="note-reminder-time" type="time"></label>
+          </fieldset>
+          <div class="note-form-actions">
+            <button id="cancel-note" type="button">Cancel</button>
+            <button class="save-note" type="submit">Save note</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Main navigation">
+      <a class="nav-item" href="index.html"><img src="assets/icons/icon-today-off.png" alt=""><span>Today</span></a>
+      <a class="nav-item" href="month.html"><img src="assets/icons/icon-month-off.png" alt=""><span>Month</span></a>
+      <a class="nav-item" href="calendar.html"><img src="assets/icons/icon-calendar-off.png" alt=""><span>Calendar</span></a>
+      <a class="nav-item selected" href="notes.html" aria-current="page"><img src="assets/icons/icon-notes.png" alt=""><span>Notes</span></a>
+    </nav>
+  </div>
+  <script src="shared.js"></script>
+  <script src="notes.js"></script>
+</body>
+</html>
